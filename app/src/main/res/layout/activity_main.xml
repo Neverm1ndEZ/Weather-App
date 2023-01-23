@@ -7,28 +7,38 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_getCityID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
-        android:text="City Coordinates"
+        android:text="Coordinates"
+        android:backgroundTint="@color/black"
+        app:cornerRadius="15dp"
         android:textColor="#FFFFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/btn_getWeatherByCityID"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_getWeatherByCityID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="118dp"
+        android:layout_height="48dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/black"
         android:text="City Name"
+        android:textColor="#FFFFFFFF"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/et_dataInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.824"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/et_dataInput"
@@ -37,9 +47,10 @@
         android:layout_marginTop="92dp"
         android:autofillHints=""
         android:ems="10"
+        android:textAlignment="center"
         android:hint="City Name"
         android:inputType="textPersonName"
-        android:textColor="#E8E2E2"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,17 +58,30 @@
 
     <ListView
         android:id="@+id/ls_weatherReports"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="408dp"
+        android:layout_height="477dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_clearList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_dataInput"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_clearList"
+        android:layout_width="119dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/black"
+        android:text="Clear List"
+        android:textColor="#FFFFFFFF"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,7 +31,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button getCityID, getWeatherByCityID;
+    Button getCityID, getWeatherByCityID, clearList;
     EditText dataInput;
     ListView weatherReports;
 
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         getCityID = findViewById(R.id.btn_getCityID);
         getWeatherByCityID = findViewById(R.id.btn_getWeatherByCityID);
+        clearList = findViewById(R.id.btn_clearList);
 
         dataInput = findViewById(R.id.et_dataInput);
         weatherReports = findViewById(R.id.ls_weatherReports);
@@ -81,10 +82,11 @@ public class MainActivity extends AppCompatActivity {
                         return view;
                     }
                 };
-
                 weatherReports.setAdapter(adapter);
             }
         }));
+
+        clearList.setOnClickListener(v -> weatherReports.setAdapter(null));
 
     }
 }
